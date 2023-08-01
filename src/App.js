@@ -1,43 +1,53 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
 
 function App() {
-  const [name,setName] = useState('');
-  const [datetime,setDatetime] = useState('');
-  const [description,setDescription] = useState('');
-  
-  function addNewTransaction(ev){
-    ev.preventDefault();
-    const url = process.env.REACT_APP_API_URL+'/test';
-    fetch(url, {
-      Method: 'POST',
-      Headers: {
-        Accept: 'application.json',
-        'Content-Type': 'application/json'
-      },
-      Body: JSON.stringify({name,description,datetime}),
-      Cache: 'default'
-    }).then(response => {
-      response.json().then(json =>{
-        console.log('result', json);
-      });
-    });
-  }
-
   return (
     <main>
       <h1>$400<span>.00</span></h1>
-      <form onSubmit={addNewTransaction}>
+      <form>
         <div className="basic">
-          <input type="text" value={name} onChange={ev => setName(ev.target.value)} placeholder={'+200 nwe samsung'}/>
-          <input type="datetime-local" value={datetime} onChange={ev => setDatetime(ev.target.value)}/>
+          <input type="text" placeholder={'+200 nwe samsung'}/>
+          <input type="datetime-local"/>
           </div>
         <div className="description">
-        <input type="text" value={description} onChange={ev => setDescription(ev.target.value)} placeholder={'description'}/> 
+        <input type="text" placeholder={'description'}/> 
         </div>
         <button type="submit">Add new transaction</button>
       </form>
+      <div className="transactions">
+        <div className="transaction"></div>
+        <div className="left">
+          <div className="name">New samsung tv</div>
+          <div className="description">It was time for new tv</div>
+        </div>
+        <div className="right">
+          <div className="price red">$500</div>
+          <div className="datetime">2023-01-08</div>
+        </div>
+      </div>
+      <div className="transactions">
+        <div className="transaction"></div>
+        <div className="left">
+          <div className="name">New samsung tv</div>
+          <div className="description">It was time for new tv</div>
+        </div>
+        <div className="right">
+          <div className="price red">$500</div>
+          <div className="datetime">2023-01-08</div>
+        </div>
+      </div>
+      <div className="transactions">
+        <div className="transaction"></div>
+        <div className="left">
+          <div className="name">New samsung tv</div>
+          <div className="description">It was time for new tv</div>
+        </div>
+        <div className="right">
+          <div className="price green">$500</div>
+          <div className="datetime">2023-01-08</div>
+        </div>
+      </div>
     </main>
   );
 }
