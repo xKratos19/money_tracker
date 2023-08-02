@@ -12,8 +12,8 @@ function App() {
   }, []);
 
   async function getTransactions() {
-    const url = (process.env.REACT_APP_API_URL + "/transaction");
-    // const url = "https://money-tracker-stf5.onrender.com/api" + "/transaction";
+    // const url = (process.env.REACT_APP_API_URL + "/transaction");
+    const url = "https://money-tracker-stf5.onrender.com/api" + "/transaction";
     const response = await fetch(url);
     return await response.json();
   }
@@ -26,8 +26,8 @@ function App() {
   
   function addNewTransaction(e) {
     e.preventDefault();
-    const url = (process.env.REACT_APP_API_URL + "/transaction");
-    // const url = "https://money-tracker-stf5.onrender.com/api" + "/transaction";
+    // const url = (process.env.REACT_APP_API_URL + "/transaction");
+    const url = "https://money-tracker-stf5.onrender.com/api" + "/transaction";
     console.log(url);
 
     const price = name.split(" ")[0];
