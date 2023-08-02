@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
-const Transaction = require("./models/Transaction.js");
+const Transaction = require("./models/transaction.js");
 const { default: mongoose } = require("mongoose");
 const app = express();
 
